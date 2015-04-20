@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
   <title>Sell Car To Dealers For The Most Money. Carzell Auction</title>
   <link href='https://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="css/fonts.css" type="text/css" media="all" />
-  <link rel="stylesheet" href="css/main.css" type="text/css" media="all" />
+<!--   <link rel="stylesheet" href="css/fonts.css" type="text/css" media="all" /> -->
+  <link rel="stylesheet" href="css/jquery.bxslider.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="css/styles.css" type="text/css" media="all" />
   <link rel="shortcut icon" type="image/x-icon" href="https://carzell.com/css/images/favicon.ico" />
   
   <meta name="description" content="Get the most money for your car when dealers compete. The best way to sell your car at auction for free. Safe, easy, and secure transaction. Carzell" />
@@ -17,64 +18,244 @@
 
   </script>
 
+<!-- ***** linked to Dane's typekit account ***** -->
+<script src="//use.typekit.net/rcb8jkh.js"></script>
+<script>try{Typekit.load();}catch(e){}</script>
 
-
-  <script type="text/javascript" src="https://carzell.com/js/jquery-1.11.0.min.js"></script>
-  <script type="text/javascript" src="https://carzell.com/js/main.js"></script>
-  
-  
 </head>
 <body>
 
 <header>
-  <nav>
-    <a href="#" class="menu"></a>
-    <ul>
-      <li class="home"></li>
-      <li class="seller"></li>
-      <li class="dealer"></li>
-      <li class="about"></li>
-      <li class="home"></li>
-    </ul>
-    <a href="#" class="logo"></a>
-    <div class="user">
+      <!-- this nav had a class of 'nav' -->
+      <nav class="main-nav">
+        <a href="#" class="menu"><span></span></a>
+        <ul>
+          <li class="home">
+            <a href="https://carzell.com">
+              <strong>Home</strong>
+              <span class="btn">View</span>
+              <i class="icon-nav-arrow"></i>
+            </a>
+    <!--           <img src="css/images/temp/home.jpg" alt="" />
+            <img src="css/images/temp/home-tablet.jpg" alt="" /> -->
+          </li>
+          <li class="seller">
+            <a href="https://carzell.com/learn-more/seller">
+              <strong>I'm a seller</strong>
+              <span class="btn">get started</span>
+              <i class="icon-nav-arrow"></i>
+            </a>
+    <!--           <img src="css/images/temp/seller.jpg" alt="" />
+            <img src="css/images/temp/seller-tablet.jpg" alt="" /> -->
+          </li>
+          <li class="dealer">
+            <a href="https://carzell.com/learn-more/dealer">
+              <strong>I'm a dealer</strong>
+              <span class="btn">get started</span>
+              <i class="icon-nav-arrow"></i>
+            </a>
+    <!--           <img src="css/images/temp/dealer.jpg" alt="" />
+            <img src="css/images/temp/dealer-tablet.jpg" alt="" /> -->
+          </li>
+          <li class="about">
+            <a href="https://carzell.com/about">
+              <strong>About <span>Carzell</span></strong>
+              <span class="btn">view</span>
+              <i class="icon-nav-arrow"></i>
+            </a>
+    <!--           <img src="css/images/temp/about.jpg" alt="" />
+            <img src="css/images/temp/about-tablet.jpg" alt="" /> -->
+          </li>
+          <li class="nav-user">
+            <ul>
+              <li><a href="https://carzell.com/learn-more/seller">Sign Up</a></li>
+              <li><a href="https://carzell.com/login">Log In</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+  <div class="container">
+    
+      <a href="https://carzell.com" class="logo"><img src="img/logo.png" height="24" width="165" /></a>
+    <nav class="nav-user">
       <ul>
-        <li><a href="#">Sign Up</a></li>
-        <li><a href="#">Log In</a></li>
+        <li><a href="https://carzell.com/learn-more/seller" class="btn">Sign Up</a></li>
+        <li><a href="https://carzell.com/login" class="btn">Log In</a></li>
       </ul>
-    </div> <!-- User -->
-  </nav>
+    </nav><!-- end nav-user -->
+  </div> <!-- end container -->
 </header>
+
 <section class="hero">
-  <h1>The smarter way to sell your car</h1>
-  <h3>Get car dealers to compete for your car at no cost to you</h3>
-  <a href="#" class="cta">Get Started</a>
-  <a href="#" class="video"></a>
+  <div class="container">
+    <div class="hero-text">
+      <h1>The smarter way to sell your car</h1>
+      <p>Get car dealers to compete for your car at no cost to you</p>
+      <a href="#" class="btn">Get Started</a>
+    </div>
+    <a href="#" class="video"><img src="img/play.png" height="204" width="205" alt="Learn more video" /></a>
+  </div>
 </section> <!-- end hero -->
 <section class="how-it-works">
-  <h2>How it works</h2>
-  <div class="first-step">
-    <img src="#" alt="List your car" />
-    <a href="#">1</a>
-    <h3>List your car for free</h3>
-    <p>Get your auction up and running in minutes. All you need is your vehicle's VIN number and 6+ photos.</p>
+    <h2>How it works</h2>
+    <div class="line"></div>
+    <div class="container">
+      <div class="step">
+        <img src="img/icon01_FULL.gif" alt="List your car" />
+        <a href="#">1</a>
+        <div class="step-text">
+          <h3>List your car for free</h3>
+          <p>Get your auction up and running in minutes. All you need is your vehicle's VIN number and 6+ photos.</p>
+        </div>
+      </div>
+      <div class="step">
+        <img src="img/icon02_FULL.gif" alt="Dealers compete" />
+        <a href="#">2</a>
+        <div class="step-text">
+          <h3>Dealers compete</h3>
+          <p>Sit back and relax as local dealers compete in our online auction to offer you the most money for your car.</p>
+        </div>
+      </div>
+      <div class="step">
+        <img src="img/icon03_FULL.gif" alt="Sell for the highest bid" />
+        <a href="#">3</a>
+        <div class="step-text">
+          <h3>Sell for the highest bid</h3>
+          <p>If you are satisfied with the highest bid, we'll connect you with the winning bidder. Otherwise, walk away at any time.</p>
+        </div>
+      </div>
+    </div> <!-- end container -->
+  <div class="progress"></div>
+</section> <!-- end how-it-works -->
+<section class="recently-sold">
+  <div class="container">
+    <h2>Recently Sold Cars</h2>
+    <div class="line"></div>
+    <ul class="bxslider">
+      <li>
+        <div class="thumb">
+          <a href="#"><img src="img/thumb-placeholder.jpeg" height="194" width="272" alt="" /></a>
+        </div>
+        <div class="entry">
+          <h4>2007 Honda Fit</h4>
+          <table class="info">
+            <tr>
+              <td><strong>NUMBER OF BIDS:</strong></td>
+              <td class="bids">9</td> 
+            </tr>
+            <tr>
+              <td><strong>LOCATION:</strong></td>
+              <td class="location">Chicago, IL</td> 
+            </tr>
+          </table>
+        </div>
+      </li>
+      <li>
+        <div class="thumb">
+          <a href="#"><img src="img/thumb-placeholder.jpeg" height="194" width="272" alt="" /></a>
+        </div>
+        <div class="entry">
+          <h4>2002 Nissan Pathfinder</h4>
+          <table class="info">
+            <tr>
+              <td><strong>NUMBER OF BIDS:</strong></td>
+              <td class="bids">9</td> 
+            </tr>
+            <tr>
+              <td><strong>LOCATION:</strong></td>
+              <td class="location">Chicago, IL</td> 
+            </tr>
+          </table>
+        </div>
+      </li>
+      <li>
+        <div class="thumb">
+          <a href="#"><img src="img/thumb-placeholder.jpeg" height="194" width="272" alt="" /></a>
+        </div>
+        <div class="entry">
+          <h4>2007 Chevrolet Cruze</h4>
+          <table class="info">
+            <tr>
+              <td><strong>NUMBER OF BIDS:</strong></td>
+              <td class="bids">9</td> 
+            </tr>
+            <tr>
+              <td><strong>LOCATION:</strong></td>
+              <td class="location">Chicago, IL</td> 
+            </tr>
+          </table>
+        </div>
+      </li>
+      <li>
+        <div class="thumb">
+          <a href="#"><img src="img/thumb-placeholder.jpeg" height="194" width="272" alt="" /></a>
+        </div>
+        <div class="entry">
+          <h4>2010 Honda CR-V</h4>
+          <table class="info">
+            <tr>
+              <td><strong>NUMBER OF BIDS:</strong></td>
+              <td class="bids">9</td> 
+            </tr>
+            <tr>
+              <td><strong>LOCATION:</strong></td>
+              <td class="location">Chicago, IL</td> 
+            </tr>
+          </table>
+        </div>
+      </li>
+    </ul> <!-- end bx-slider -->
+  </div> <!-- end container -->
+</section> <!-- end recently-sold -->
+<section class="why-carzell">
+  <h2>Why Carzell</h2>
+  <div class="line"></div>
+  <div class="get-more">
+    <img src="img/get-more-vertical-placeholder.png" height="609" width="826" alt="" />
+    <div class="get-more-text">
+      <h3>Get more for your car</h3>
+      <p>On average, Carzell sellers get $924 more for their cars vs. trading it in. With our extensive dealer network competing, you're sure to get the true market price for your car.</p>
+    </div>
+  </div> <!-- end get more -->
+  <div class="sell-quickly">
+    <div class="sell-quickly-text">
+      <h3>Sell your car quickly, for free</h3>
+      <p>In only two days your car can be sold without any risk, commitment or hassle.</p>
+    </div>
+    <img src="img/time-horizontal-placeholder.png" height="422" width="665" alt="" />
+  </div> <!-- end sell-quickly -->
+</section> <!-- end why-carzell -->
+<section class="testimonials">
+  
+</section>
+<section class="dealer">
+  <h2>Are you a dealer?</h2>
+  <div class="line"></div>
+  <p>Gain access to thousands of Chicagoland vehicles</p>
+  <a href="#" class="learn-more">Learn more</a>
+</section> <!-- end dealer -->
+<footer>
+  <div class="logo"><a href="#"></a></div>
+  <ul class="footer-links">
+    <li>ABOUT</li>
+    <li>OUR BLOG</li>
+    <li>PRIVACY POLICY</li>
+    <li>TERMS AND CONDITIONS</li>
+    <li>CONTACT</li>
+  </ul>
+  <div class="social">
+    <img src="img/facebook_icon.png" height="152" width="151" alt="" />
+    <img src="img/twitter_icon.png" height="152" width="151" alt="" />
   </div>
-  <div class="second-step">
-    <img src="#" alt="Dealers compete" />
-    <a href="#">2</a>
-    <h3></h3>
-    <p>Sit back and relax as local dealers compete in our online auction to offer you the most money for your car.</p>
-  </div>
-  <div class="third-step">
-    <img src="#" alt="Sell for the highest bid" />
-    <a href="#">2</a>
-    <h3></h3>
-    <p>If you are satisfied with the highest bid, we'll connect you with the winning bidder. Otherwise, walk away at any time.</p>
-  </div>
-</section> <!-- end hero -->
+</footer>
 
 
 <div id="video_overlay" style="display:none;"></div>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
 <script>
   function loadVideo(){
     jQuery('#video').click(function(e){
