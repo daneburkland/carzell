@@ -4,7 +4,45 @@
 
   $doc.ready(function() {
     var vurl = $('#vimeo').attr('src');
+    $()
 
+
+    $('.line').each(function() {
+        var outerThis = $(this);
+      $(this).waypoint(function() {
+        outerThis.addClass('scrolled-to');
+      }, {
+        offset: '75%'
+      });
+
+    })
+
+    $('#first-gif').waypoint(function() {
+      $('#first-gif').attr('src', 'img/icon01_FULL.gif')
+      .delay(5000).queue(function(next) {
+        $('#second-gif').attr('src', 'img/icon02_FULL.gif');
+        $('.progress').toggleClass( 'second-step');
+        $('#progress-circle').toggleClass('second-step');
+        next();
+      }).delay(7500).queue(function(next) {
+        $('#third-gif').attr('src', 'img/icon03_FULL.gif');
+        $('.progress').toggleClass( 'third-step');
+        $('#progress-circle').toggleClass('third-step');
+        next();
+      }).delay(5000).queue(function(next) {
+        $('.progress').toggleClass( 'finished');
+      });
+    }, {
+      offset: '75%'
+    });
+
+    $('#bars').waypoint(function() {
+      $('#bars').addClass('loaded');
+    }, {
+      offset: '25%'
+    });
+
+    
 
     $('.bxslider').bxSlider({
       minSlides: 1,

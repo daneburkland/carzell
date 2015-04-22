@@ -7,6 +7,7 @@
   <link href='https://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
 <!--   <link rel="stylesheet" href="css/fonts.css" type="text/css" media="all" /> -->
   <link rel="stylesheet" href="css/jquery.bxslider.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="css/animate.min.css" type="text/css" media="all" />
   <link rel="stylesheet" href="css/styles.css" type="text/css" media="all" />
   <link rel="shortcut icon" type="image/x-icon" href="https://carzell.com/css/images/favicon.ico" />
   
@@ -25,7 +26,7 @@
 </head>
 <body>
 
-<header>
+<header class="animated fadeInDown">
       <!-- this nav had a class of 'nav' -->
       <nav class="main-nav">
         <a href="#" class="menu"><span></span></a>
@@ -87,37 +88,37 @@
 </header>
 
 <section class="hero">
-  <div class="container">
+  <div class="container animated fadeInUp">
     <div class="hero-text">
       <h1>The smarter way to sell your car</h1>
       <p>Get car dealers to compete for your car at no cost to you</p>
       <a href="#" class="btn">Get Started</a>
     </div>
-    <a href="#" class="video"><img src="img/play.png" height="204" width="205" alt="Learn more video" /></a>
+    <a href="#" id="video" class="video"><img src="img/play.png" height="204" width="205" alt="Learn more video" /></a>
   </div>
 </section> <!-- end hero -->
 <section class="how-it-works">
     <h2>How it works</h2>
     <div class="line"></div>
     <div class="container">
-      <div class="step">
-        <img src="img/icon01_FULL.gif" alt="List your car" />
+      <div class="first step">
+        <img id="first-gif" src="img/Icon_01.png" alt="List your car" />
         <a href="#">1</a>
         <div class="step-text">
           <h3>List your car for free</h3>
           <p>Get your auction up and running in minutes. All you need is your vehicle's VIN number and 6+ photos.</p>
         </div>
       </div>
-      <div class="step">
-        <img src="img/icon02_FULL.gif" alt="Dealers compete" />
+      <div class="second step">
+        <img id="second-gif" src="img/Icon02_START.png" alt="Dealers compete" />
         <a href="#">2</a>
         <div class="step-text">
           <h3>Dealers compete</h3>
           <p>Sit back and relax as local dealers compete in our online auction to offer you the most money for your car.</p>
         </div>
       </div>
-      <div class="step">
-        <img src="img/icon03_FULL.gif" alt="Sell for the highest bid" />
+      <div class="third step">
+        <img id="third-gif" src="img/Icon03_START.png" alt="Sell for the highest bid" />
         <a href="#">3</a>
         <div class="step-text">
           <h3>Sell for the highest bid</h3>
@@ -125,7 +126,9 @@
         </div>
       </div>
     </div> <!-- end container -->
-  <div class="progress"></div>
+  <div class="progress">
+    <a id="progress-circle" href="#"></a>
+  </div>
 </section> <!-- end how-it-works -->
 <section class="recently-sold">
   <div class="container">
@@ -208,42 +211,53 @@
   </div> <!-- end container -->
 </section> <!-- end recently-sold -->
 <section class="why-carzell">
+  <div class="gradient"></div>
   <h2>Why Carzell</h2>
   <div class="line"></div>
-  <div class="get-more">
-    <img src="img/get-more-vertical-placeholder.png" height="609" width="826" alt="" />
+  <div class="get-more benefit">
+    <img src="img/get-more-grid.png" height="514" width="718" alt="" />
+    <!-- <div class="mask shadows-mask"> -->
+      <img class="shadows" src="img/get-more-shadows.png" height="514" width="718" alt="" />
+      <img id="bars" src="img/get-more-bars.png" height="514" width="718" alt="" />
     <div class="get-more-text">
+      <h5>+$924 vs. trade-in</h5>
       <h3>Get more for your car</h3>
       <p>On average, Carzell sellers get $924 more for their cars vs. trading it in. With our extensive dealer network competing, you're sure to get the true market price for your car.</p>
+      <a href="#">Learn more &rarr;</a>
     </div>
   </div> <!-- end get more -->
-  <div class="sell-quickly">
+  <hr>
+  <div class="sell-quickly benefit">
     <div class="sell-quickly-text">
+      <h5>Sold in two days</h5>
       <h3>Sell your car quickly, for free</h3>
       <p>In only two days your car can be sold without any risk, commitment or hassle.</p>
+      <a href="#">Learn more &rarr;</a>
     </div>
     <img src="img/time-horizontal-placeholder.png" height="422" width="665" alt="" />
   </div> <!-- end sell-quickly -->
 </section> <!-- end why-carzell -->
-<section class="testimonials">
+<!-- <section class="testimonials">
   
-</section>
-<section class="dealer">
+</section> -->
+<section class="dealer-section">
   <h2>Are you a dealer?</h2>
   <div class="line"></div>
   <p>Gain access to thousands of Chicagoland vehicles</p>
-  <a href="#" class="learn-more">Learn more</a>
+  <a href="#" class="learn-more btn">Learn more</a>
 </section> <!-- end dealer -->
 <footer>
-  <div class="logo"><a href="#"></a></div>
-  <ul class="footer-links">
-    <li>ABOUT</li>
-    <li>OUR BLOG</li>
-    <li>PRIVACY POLICY</li>
-    <li>TERMS AND CONDITIONS</li>
-    <li>CONTACT</li>
-  </ul>
-  <div class="social">
+  <div class="row container">
+    <a href="https://carzell.com" class="logo"><img src="img/logo.png" height="24" width="165" /></a>
+    <ul class="footer-links">
+      <li>ABOUT</li>
+      <li>OUR BLOG</li>
+      <li>PRIVACY POLICY</li>
+      <li>TERMS AND CONDITIONS</li>
+      <li>CONTACT</li>
+    </ul>
+  </div>
+  <div class="social container">
     <img src="img/facebook_icon.png" height="152" width="151" alt="" />
     <img src="img/twitter_icon.png" height="152" width="151" alt="" />
   </div>
@@ -254,6 +268,7 @@
 
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
+<script type="text/javascript" src="js/jquery.waypoints.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 
 <script>

@@ -6,6 +6,12 @@
 /* ================================================================================
   #Typography - 
 ================================================================================ */
+body {
+  font-family: "proxima-nova", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #444444;
+}
 
 h1,
 h2,
@@ -17,12 +23,13 @@ h6 {
   margin-top: 0;
   text-rendering: optimizeLegibility; /*  voodoo to enable ligatures and kerning | https://developer.mozilla.org/en-US/docs/CSS/text-rendering */
   color: #222222;
+  font-weight: 400;
 }
 
 h1,
 .typl8-alpha {
-  font-size: 60px;
-  font-size: 3.33333rem; /* 60 / 18 = 3.3333 */
+  font-size: 72px;
+  font-size: 4rem; /* 72 / 18 = 4 */
   margin-bottom: 8.91px;
   margin-bottom: 0.495rem;
 }
@@ -81,24 +88,22 @@ a { text-decoration: none;  }
 /* ================================================================================
   #Base
 ================================================================================ */
-body {
-  font-family: "proxima-nova", sans-serif;
-  font-size: 16px;
-  color: #444444;
-}
 h2 {
-  font-size: 3em;
   display: table;
   margin: auto;
   margin-bottom: 15px;
 }
 .line {
-  height: 2px;
+  height: 1px;
   width: 120px;
   display: block;
   margin: 0 auto;
-  background: #444444;
-  margin-bottom: 3vh;
+  background: #dcdcdc;
+  margin-bottom: 5vh;
+  transition: width .5s ease-in-out;
+  &.scrolled-to {
+    width: 200px;
+  }
 }
 .btn { 
   display: inline-block;
@@ -265,11 +270,11 @@ header {
 
 .hero {
   position: relative;
-  height: 80vh;
+  height: 75vh;
   background-image: url("../img/hero_bg_placeholder.png");
   text-align: left;
   .hero-text , .video {
-    top: 50vh;
+    top: 40vh;
     transform: translateY(-50%);
   }
   .video {
@@ -292,6 +297,9 @@ header {
     }
   }
   h1, p { color: #fff; }
+  h1 {
+    margin-bottom: 5vh;
+  }
 }
 
 /* ================================================================================
@@ -313,6 +321,7 @@ header {
       display: inline-block;
       width: 5vh;
       text-align: center;
+      font-size: 3vh;
       height: 5vh;
       line-height: 5vh;
       color: white;
@@ -322,11 +331,13 @@ header {
     }
     img {
       max-width: 100%;
-      margin-bottom: 60px;
+      margin-bottom: 10vh;
+      position: relative;
+      left: -14%;
     }
   }
   .step-text {
-    height: 20vh;
+    height: 18vh;
   }
   .progress {
     position: absolute;
@@ -335,18 +346,45 @@ header {
     width: 100%;
     background: #ECF0F6;
     height: 28vh;
+    a {
+      position: absolute;
+      top: -1.5vh;
+      left: 20.333333%;
+      display: inline-block;
+      width: 5vh;
+      height: 5vh;
+      background: #5B9DD7;
+      border-radius: 5vh;
+      transition: left .3s ease-in-out;
+      &.second-step {
+        left: 48.33333%;
+      }
+      &.third-step {
+        left: 76.33333%;
+      }
+    }
     &:before {
-    content: "";
-    border-top: 15px solid #B3B3B3;
-    display: block;
+      content: "";
+      border-top: 2vh solid #B3B3B3;
+      display: block;
     }
     &:after {
-    content: "";
-    border-top: 15px solid #5B9DD7;
-    display: block;
-    position: absolute;
-    width: 22%;
-    top: 0vh;
+      content: "";
+      border-top: 2vh solid #5B9DD7;
+      display: block;
+      position: absolute;
+      width: 22%;
+      top: 0;
+      transition: width .3s ease-in-out;
+    }
+    &.second-step:after {
+      width: 50%;
+    }
+    &.third-step:after {
+      width: 78%;
+    }
+    &.finished:after {
+      width: 100%;
     }
   }
 }
@@ -355,6 +393,7 @@ header {
   #Recently Sold
 ================================================================================ */
 .recently-sold {
+  position: relative;
   .entry {
     h4 {
       margin : 15px 0;
@@ -379,14 +418,139 @@ header {
   }
 }
 
+/* ================================================================================
+  #Why Carzell
+================================================================================ */
+.why-carzell {
+  position: relative;
+  .benefit  {
+    height: 50%;
+    position: relative;
+  }
+  .gradient {
+    position: absolute;
+    top: 0;
+    height: 30%;
+    width: 100%;
+    background: linear-gradient(#f6f6f6, #fff);
+    z-index: -1;
+  }
+  .line {
+    margin-bottom: 0;
+  }
+  img {
+    width: 50%;
+    height: auto;
+  }
+  .get-more {
+    img:nth-child(n+2) {
+      clip-path: polygon(0 100%, 100% 53%, 100% 100%, 0% 100%);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transition: all 2s ease-out;
+      &.loaded {
+        clip-path: polygon(0 45%, 100% 0, 100% 100%, 0% 100%);
+      }
+    }
+    .get-more-text {
+      left: 50%;
+    }
+  }
+  hr {
+    width: 80%;
+    margin: 0 auto;
+    border-color: #dcdcdc;
+  }
+  .sell-quickly {
+    img {
+      position: relative;
+      left: 50%;
+    }
+    .sell-quickly-text {
+      left: 20%;
+    }
+  }
+  .get-more-text, .sell-quickly-text {
+    width: 30%;
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    transform: translateY(-50%);
+    h3 {
+      font-weight: 300;
+    }
+    h5 {
+      font-weight: 600;
+      color: #5DC560;
+    }
+    a {
+      font-size: 1rem;
+      color: #5DC560;
+    }
+  }
+}
+
+/* ================================================================================
+  #Dealer
+================================================================================ */
+.dealer-section {
+  background: #5B9DD7;
+  color: #fff;
+  text-align: center;
+  padding: 3vh 0;
+  h2 {
+    color: #fff;
+  }
+  .line {
+    background: #fff;
+  }
+  .btn {
+    width: 120px;
+  }
+}
 
 /* --- bx-slider overrides --- */
 .bx-wrapper {
   box-shadow: none;
+  background-color: transparent;
+  border: none;
   .bx-next {
     background: url("../img/controls.png") no-repeat -43px -32px;
   }
   .bx-prev {
     background: url("../img/controls.png") no-repeat 0 -32px;
   }
+  .bx-loading {
+    background: url(../img/bx_loader.gif) center center no-repeat #ffffff;
+  }
+}
+
+/* ================================================================================
+  #Footer
+================================================================================ */
+footer {
+  background-color: #2A2C30;
+  padding: 12vh 0;
+  color: #fff;
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    width: 65%;
+  }
+  .social {
+    text-align: right;
+    margin-top: 20px;
+    img {
+      width: 35px;
+      height: auto;
+    }
+  }
+
 }
