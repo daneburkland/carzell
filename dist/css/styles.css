@@ -66,6 +66,11 @@ h6, .typl8-zeta {
   margin-bottom: 29.7px;
   margin-bottom: 1.65rem; }
 
+li {
+  font-size: 18px;
+  font-size: 1rem;
+  /* 18 = 18 × 1 */ }
+
 p {
   margin: auto auto 1.5em;
   /* bottom margin for paragraphs */ }
@@ -88,11 +93,11 @@ h2 {
   margin-bottom: 15px; }
 
 .line {
-  height: 1px;
+  height: 2px;
   width: 120px;
   display: block;
   margin: 0 auto;
-  background: #dcdcdc;
+  background: #888;
   margin-bottom: 5vh;
   -webkit-transition: width .5s ease-in-out;
           transition: width .5s ease-in-out; }
@@ -124,10 +129,14 @@ section {
 ================================================================================ */
 header {
   position: fixed;
+  /* force hardware acceleration to fix webkit sticky header flashing */
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
   z-index: 999;
   height: 50px;
   width: 100%;
-  background: #5B9DD7; }
+  background: rgba(91, 157, 215, 0.8); }
   header .container {
     position: absolute;
     left: 10%;
@@ -437,6 +446,8 @@ header {
       margin-bottom: 10vh;
       position: relative;
       left: -14%; }
+  .how-it-works .second a, .how-it-works .third a {
+    background: #B3B3B3; }
   .how-it-works .step-text {
     height: 18vh; }
   .how-it-works .progress {
@@ -449,18 +460,21 @@ header {
     .how-it-works .progress a {
       position: absolute;
       top: -1.5vh;
-      left: 20.33333%;
+      left: 22%;
       display: inline-block;
       width: 5vh;
       height: 5vh;
       background: #5B9DD7;
       border-radius: 5vh;
+      -webkit-transform: translateX(-50%);
+          -ms-transform: translateX(-50%);
+              transform: translateX(-50%);
       -webkit-transition: left .3s ease-in-out;
               transition: left .3s ease-in-out; }
       .how-it-works .progress a.second-step {
-        left: 48.33333%; }
+        left: 50%; }
       .how-it-works .progress a.third-step {
-        left: 76.33333%; }
+        left: 78%; }
     .how-it-works .progress:before {
       content: "";
       border-top: 2vh solid #B3B3B3;
@@ -486,17 +500,36 @@ header {
 ================================================================================ */
 .recently-sold {
   position: relative; }
+  .recently-sold .price {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 80px solid #00D060;
+    border-right: 80px solid transparent;
+    display: inline-block;
+    top: 0%;
+    left: 0%;
+    color: #fff; }
+  .recently-sold span {
+    position: absolute;
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    color: #fff;
+    top: 20px; }
   .recently-sold .entry h4 {
     margin: 15px 0; }
     .recently-sold .entry h4:after {
       content: "";
-      border-bottom: 2px solid #444444;
+      border-bottom: 2px solid #ECF0F6;
       width: 100%;
       position: relative;
       margin-top: 15px;
       display: inline-block; }
   .recently-sold .entry ul {
     list-style: none; }
+  .recently-sold .thumb {
+    border: 2px solid #ECF0F6; }
   .recently-sold table {
     width: 100%; }
     .recently-sold table tr {
@@ -543,10 +576,24 @@ header {
   .why-carzell .sell-quickly img {
     position: relative;
     left: 50%; }
+  .why-carzell .sell-quickly img:nth-child(2) {
+    -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+            clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); }
+  .why-carzell .sell-quickly img:nth-child(3) {
+    -webkit-clip-path: polygon(0 0, 8% 0, 8% 100%, 0 100%);
+            clip-path: polygon(0 0, 8% 0, 8% 100%, 0 100%); }
+  .why-carzell .sell-quickly img:nth-child(-n+3) {
+    position: absolute;
+    left: 50%;
+    -webkit-transition: all 4s ease-out;
+            transition: all 4s ease-out; }
+    .why-carzell .sell-quickly img:nth-child(-n+3).loaded {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+              clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); }
   .why-carzell .sell-quickly .sell-quickly-text {
-    left: 20%; }
+    left: 15%; }
   .why-carzell .get-more-text, .why-carzell .sell-quickly-text {
-    width: 30%;
+    width: 35%;
     position: absolute;
     z-index: 5;
     top: 50%;
@@ -583,9 +630,11 @@ header {
   background-color: transparent;
   border: none; }
   .bx-wrapper .bx-next {
-    background: url("../img/controls.png") no-repeat -43px -32px; }
+    background: url("../img/controls.png") no-repeat -43px -32px;
+    right: -8%; }
   .bx-wrapper .bx-prev {
-    background: url("../img/controls.png") no-repeat 0 -32px; }
+    background: url("../img/controls.png") no-repeat 0 -32px;
+    left: -8%; }
   .bx-wrapper .bx-loading {
     background: url(../img/bx_loader.gif) center center no-repeat #ffffff; }
 
@@ -615,14 +664,47 @@ footer {
     display: -ms-flexbox;
     display: flex;
     list-style: none;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    width: 65%; }
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    width: 70%; }
+    footer ul li {
+      margin: 5px 20px;
+      text-align: center; }
   footer .social {
     text-align: right;
     margin-top: 20px; }
     footer .social img {
       width: 35px;
       height: auto; }
+
+/* ================================================================================
+  #Footer
+================================================================================ */
+.video-playing {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1000; }
+
+.video-playing iframe {
+  width: 800px;
+  margin: 80px auto;
+  display: block; }
+
+/* All Mobile Sizes (devices and browsers) */
+@media only screen and (max-width: 767px) {
+  footer .row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+    footer .row .logo {
+      margin-bottom: 50px; } }

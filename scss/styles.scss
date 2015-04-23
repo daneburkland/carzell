@@ -74,6 +74,11 @@ h6,
   margin-bottom: 1.65rem;
 }
 
+li {
+  font-size: 18px;
+  font-size: 1rem; /* 18 = 18 × 1 */
+}
+
 p {
   margin: auto auto 1.5em; /* bottom margin for paragraphs */
 }
@@ -94,11 +99,11 @@ h2 {
   margin-bottom: 15px;
 }
 .line {
-  height: 1px;
+  height: 2px;
   width: 120px;
   display: block;
   margin: 0 auto;
-  background: #dcdcdc;
+  background: #888;
   margin-bottom: 5vh;
   transition: width .5s ease-in-out;
   &.scrolled-to {
@@ -132,10 +137,14 @@ section {
 ================================================================================ */
 header {
   position: fixed;
+  /* force hardware acceleration to fix webkit sticky header flashing */
+  -webkit-transform: translate3d(0,0,0);
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
   z-index: 999;
   height: 50px;
   width: 100%;
-  background: #5B9DD7;
+  background: rgba(91, 157, 215, .8);
   .container { 
     position: absolute; 
     left: 10%;
@@ -336,6 +345,9 @@ header {
       left: -14%;
     }
   }
+  .second a, .third a {
+    background: #B3B3B3;
+  }
   .step-text {
     height: 18vh;
   }
@@ -349,18 +361,19 @@ header {
     a {
       position: absolute;
       top: -1.5vh;
-      left: 20.333333%;
+      left: 22%;
       display: inline-block;
       width: 5vh;
       height: 5vh;
       background: #5B9DD7;
       border-radius: 5vh;
+      transform: translateX(-50%);
       transition: left .3s ease-in-out;
       &.second-step {
-        left: 48.33333%;
+        left: 50%;
       }
       &.third-step {
-        left: 76.33333%;
+        left: 78%;
       }
     }
     &:before {
@@ -394,12 +407,29 @@ header {
 ================================================================================ */
 .recently-sold {
   position: relative;
+  .price {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 80px solid #00D060;
+    border-right: 80px solid transparent;
+    display: inline-block;
+    top: 0%;
+    left: 0%;
+    color: #fff;
+  }
+    span {
+      position: absolute;
+      transform: rotate(-45deg);
+      color: #fff;
+      top: 20px;
+    }
   .entry {
     h4 {
       margin : 15px 0;
       &:after {
         content: "";
-        border-bottom: 2px solid #444444;
+        border-bottom: 2px solid #ECF0F6;
         width: 100%;
         position: relative;
         margin-top: 15px;
@@ -409,6 +439,9 @@ header {
     ul {
       list-style: none;
     }
+  }
+  .thumb {
+    border: 2px solid #ECF0F6;
   }
   table {
     width: 100%;
@@ -467,12 +500,28 @@ header {
       position: relative;
       left: 50%;
     }
+    img {
+      &:nth-child(2) {
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); 
+      }
+      &:nth-child(3) {
+        clip-path: polygon(0 0, 8% 0, 8% 100%, 0 100%);
+      }
+      &:nth-child(-n+3) {
+        position: absolute;
+        left: 50%;
+        transition: all 4s ease-out;
+        &.loaded {
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+      }
+    }
     .sell-quickly-text {
-      left: 20%;
+      left: 15%;
     }
   }
   .get-more-text, .sell-quickly-text {
-    width: 30%;
+    width: 35%;
     position: absolute;
     z-index: 5;
     top: 50%;
@@ -517,9 +566,11 @@ header {
   border: none;
   .bx-next {
     background: url("../img/controls.png") no-repeat -43px -32px;
+    right: -8%;
   }
   .bx-prev {
     background: url("../img/controls.png") no-repeat 0 -32px;
+    left: -8%;
   }
   .bx-loading {
     background: url(../img/bx_loader.gif) center center no-repeat #ffffff;
@@ -541,8 +592,13 @@ footer {
   ul {
     display: flex;
     list-style: none;
-    justify-content: space-between;
-    width: 65%;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 70%;
+    li {
+      margin: 5px 20px;
+      text-align: center;
+    }
   }
   .social {
     text-align: right;
@@ -550,6 +606,37 @@ footer {
     img {
       width: 35px;
       height: auto;
+    }
+  }
+}
+
+
+/* ================================================================================
+  #Footer
+================================================================================ */
+.video-playing {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 1000;
+}
+.video-playing iframe {
+  width: 800px;
+  margin: 80px auto;
+  display: block;
+}
+
+/* All Mobile Sizes (devices and browsers) */
+@media only screen and (max-width: 767px) {
+
+  footer {
+    .row {
+      flex-direction: column;
+      .logo {
+        margin-bottom: 50px;
+      }
     }
   }
 

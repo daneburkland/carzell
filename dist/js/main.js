@@ -4,8 +4,6 @@
 
   $doc.ready(function() {
     var vurl = $('#vimeo').attr('src');
-    $()
-
 
     $('.line').each(function() {
         var outerThis = $(this);
@@ -16,7 +14,7 @@
       });
 
     })
-
+    //starts the first gif, then starts subsequent after each one ends
     $('#first-gif').waypoint(function() {
       $('#first-gif').attr('src', 'img/icon01_FULL.gif')
       .delay(5000).queue(function(next) {
@@ -24,10 +22,16 @@
         $('.progress').toggleClass( 'second-step');
         $('#progress-circle').toggleClass('second-step');
         next();
+      }).delay(300).queue(function(next) {
+        $('.second a').css('background', '#5B9DD7');
+        next();
       }).delay(7500).queue(function(next) {
         $('#third-gif').attr('src', 'img/icon03_FULL.gif');
         $('.progress').toggleClass( 'third-step');
         $('#progress-circle').toggleClass('third-step');
+        next();
+      }).delay(300).queue(function(next) {
+        $('.third a').css('background', '#5B9DD7');
         next();
       }).delay(5000).queue(function(next) {
         $('.progress').toggleClass( 'finished');
@@ -36,10 +40,21 @@
       offset: '75%'
     });
 
-    $('#bars').waypoint(function() {
-      $('#bars').addClass('loaded');
+    //show the chart bars in the Why Carzell section
+    $('#dollar-bars').waypoint(function() {
+      $('#dollar-bars').addClass('loaded');
     }, {
-      offset: '25%'
+      offset: '50%'
+    });
+    $('#carzell-time-bar').waypoint(function() {
+      $('#carzell-time-bar').addClass('loaded');
+    }, {
+      offset: '75%'
+    });
+    $('#private-time-bar').waypoint(function() {
+      $('#private-time-bar').addClass('loaded');
+    }, {
+      offset: '75%'
     });
 
     
@@ -57,12 +72,12 @@
       e.preventDefault();
       $('#vimeo').attr('src', vurl);
       $('#video_overlay').fadeIn();
-      $('#video_overlay').addClass('vol');
+      $('#video_overlay').addClass('video-playing');
     });
     
     $('#video_overlay').click(function(){
       $('#vimeo').attr('src','');
-      $('#video_overlay').removeClass('vol');
+      $('#video_overlay').removeClass('video-playing');
       $('#video_overlay').hide();
     });
     
@@ -70,7 +85,7 @@
       e.keyCode; // this value
       if(e.keyCode == 27){
         $('#vimeo').attr('src','');
-        $('#video_overlay').removeClass('vol');
+        $('#video_overlay').removeClass('video-playing');
         $('#video_overlay').hide();
       }
     });

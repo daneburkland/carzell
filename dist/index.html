@@ -4,7 +4,7 @@
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
   <title>Sell Car To Dealers For The Most Money. Carzell Auction</title>
-  <link href='https://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+<!--   <link href='https://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'> -->
 <!--   <link rel="stylesheet" href="css/fonts.css" type="text/css" media="all" /> -->
   <link rel="stylesheet" href="css/jquery.bxslider.css" type="text/css" media="all" />
   <link rel="stylesheet" href="css/animate.min.css" type="text/css" media="all" />
@@ -20,7 +20,7 @@
   </script>
 
 <!-- ***** linked to Dane's typekit account ***** -->
-<script src="//use.typekit.net/rcb8jkh.js"></script>
+<!-- <script src="//use.typekit.net/rcb8jkh.js"></script> -->
 <script>try{Typekit.load();}catch(e){}</script>
 
 </head>
@@ -136,6 +136,8 @@
     <div class="line"></div>
     <ul class="bxslider">
       <li>
+        <div class="price"></div>
+        <span>$17,250</span>
         <div class="thumb">
           <a href="#"><img src="img/thumb-placeholder.jpeg" height="194" width="272" alt="" /></a>
         </div>
@@ -154,8 +156,10 @@
         </div>
       </li>
       <li>
+        <div class="price"></div>
+        <span>$17,250</span>
         <div class="thumb">
-          <a href="#"><img src="img/thumb-placeholder.jpeg" height="194" width="272" alt="" /></a>
+          <a href="#"><img src="img/thumb-placeholder-2.jpeg" height="194" width="272" alt="" /></a>
         </div>
         <div class="entry">
           <h4>2002 Nissan Pathfinder</h4>
@@ -172,8 +176,10 @@
         </div>
       </li>
       <li>
+        <div class="price"></div>
+        <span>$17,250</span>
         <div class="thumb">
-          <a href="#"><img src="img/thumb-placeholder.jpeg" height="194" width="272" alt="" /></a>
+          <a href="#"><img src="img/thumb-placeholder-3.jpeg" height="194" width="272" alt="" /></a>
         </div>
         <div class="entry">
           <h4>2007 Chevrolet Cruze</h4>
@@ -190,8 +196,10 @@
         </div>
       </li>
       <li>
+        <div class="price"></div>
+        <span>$17,250</span>
         <div class="thumb">
-          <a href="#"><img src="img/thumb-placeholder.jpeg" height="194" width="272" alt="" /></a>
+          <a href="#"><img src="img/thumb-placeholder-4.jpeg" height="194" width="272" alt="" /></a>
         </div>
         <div class="entry">
           <h4>2010 Honda CR-V</h4>
@@ -218,7 +226,7 @@
     <img src="img/get-more-grid.png" height="514" width="718" alt="" />
     <!-- <div class="mask shadows-mask"> -->
       <img class="shadows" src="img/get-more-shadows.png" height="514" width="718" alt="" />
-      <img id="bars" src="img/get-more-bars.png" height="514" width="718" alt="" />
+      <img id="dollar-bars" src="img/get-more-bars.png" height="514" width="718" alt="" />
     <div class="get-more-text">
       <h5>+$924 vs. trade-in</h5>
       <h3>Get more for your car</h3>
@@ -234,7 +242,9 @@
       <p>In only two days your car can be sold without any risk, commitment or hassle.</p>
       <a href="#">Learn more &rarr;</a>
     </div>
-    <img src="img/time-horizontal-placeholder.png" height="422" width="665" alt="" />
+    <img id="private-time-bar" src="img/sell-quickly-private.png" height="429" width="659" alt="" />
+    <img id="carzell-time-bar" src="img/sell-quickly-carzell.png" height="429" width="659" alt="" />
+    <img src="img/sell-quickly-grid.png" height="429" width="659" alt="" />
   </div> <!-- end sell-quickly -->
 </section> <!-- end why-carzell -->
 <!-- <section class="testimonials">
@@ -246,6 +256,8 @@
   <p>Gain access to thousands of Chicagoland vehicles</p>
   <a href="#" class="learn-more btn">Learn more</a>
 </section> <!-- end dealer -->
+
+
 <footer>
   <div class="row container">
     <a href="https://carzell.com" class="logo"><img src="img/logo.png" height="24" width="165" /></a>
@@ -264,13 +276,14 @@
 </footer>
 
 
-<div id="video_overlay" style="display:none;"></div>
 
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
+<!-- <script type="text/javascript" src="js/jquery.fullscreener.min.js"></script> -->
 <script type="text/javascript" src="js/jquery.waypoints.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 
+<div id="video_overlay" style="display:none;"></div>
 <script>
   function loadVideo(){
     jQuery('#video').click(function(e){
