@@ -63,7 +63,7 @@
       minSlides: 1,
       maxSlides: 4,
       slideWidth: 250,
-      slideMargin: 10,
+      slideMargin: 25,
       autoControls: true,
       responsive: true
     });
