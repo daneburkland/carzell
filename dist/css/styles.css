@@ -419,7 +419,7 @@ header {
     padding-left: 50%; }
     .hero .hero-text .btn {
       width: 150px;
-      height: 40px;
+      height: 45px;
       line-height: 40px;
       background: #EA4031;
       border-color: #fff; }
@@ -431,7 +431,8 @@ header {
       margin-bottom: 5vh;
       font-weight: 300; }
     .hero .hero-text p {
-      margin-left: 25%; }
+      margin-left: 25%;
+      font-size: 1.333rem; }
 
 /* ================================================================================
   #How it works
@@ -938,7 +939,7 @@ footer {
   h2 {
     text-align: center; }
   .hero .video {
-    left: 0; }
+    left: -5%; }
   .hero .hero-text {
     padding-left: 25%; }
   .how-it-works .progress {

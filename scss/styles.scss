@@ -320,7 +320,7 @@ header {
     padding-left: 50%;
     .btn {
       width: 150px;
-      height: 40px;
+      height: 45px;
       line-height: 40px;
       background: #EA4031;
       border-color: #fff;
@@ -335,6 +335,7 @@ header {
   }
   p {
     margin-left: 25%;
+    font-size: 1.333rem;
   }
   }
 }
@@ -881,7 +882,7 @@ footer {
   }
   .hero {
     .video {
-      left: 0;
+      left: -5%;
     }
     .hero-text {
       padding-left: 25%;

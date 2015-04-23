@@ -5,6 +5,7 @@
   $doc.ready(function() {
     var vurl = $('#vimeo').attr('src');
 
+    //animate the lines under each section title when scrolled to
     $('.line').each(function() {
         var outerThis = $(this);
       $(this).waypoint(function() {
@@ -14,31 +15,51 @@
       });
 
     })
-    //starts the first gif, then starts subsequent after each one ends
-    $('#first-gif').waypoint(function() {
-      $('#first-gif').attr('src', 'img/icon01_FULL.gif')
-      .delay(5000).queue(function(next) {
-        $('#second-gif').attr('src', 'img/icon02_FULL.gif');
-        $('.progress').toggleClass( 'second-step');
-        $('#progress-circle').toggleClass('second-step');
-        next();
-      }).delay(300).queue(function(next) {
-        $('.second a').css('background', '#5B9DD7');
-        next();
-      }).delay(7500).queue(function(next) {
-        $('#third-gif').attr('src', 'img/icon03_FULL.gif');
-        $('.progress').toggleClass( 'third-step');
-        $('#progress-circle').toggleClass('third-step');
-        next();
-      }).delay(300).queue(function(next) {
-        $('.third a').css('background', '#5B9DD7');
-        next();
-      }).delay(5000).queue(function(next) {
-        $('.progress').toggleClass( 'finished');
+
+    //if not mobile, start the first gif, then start others in progression
+    //if mobile, start each when scrolled to
+    if ($(window).width() > 767) {
+      $('#first-gif').waypoint(function() {
+        $('#first-gif').attr('src', 'img/icon01_FULL.gif')
+        .delay(5000).queue(function(next) {
+          $('#second-gif').attr('src', 'img/icon02_FULL.gif');
+          $('.progress').toggleClass( 'second-step');
+          $('#progress-circle').toggleClass('second-step');
+          next();
+        }).delay(300).queue(function(next) {
+          $('.second a').css('background', '#5B9DD7');
+          next();
+        }).delay(7500).queue(function(next) {
+          $('#third-gif').attr('src', 'img/icon03_FULL.gif');
+          $('.progress').toggleClass( 'third-step');
+          $('#progress-circle').toggleClass('third-step');
+          next();
+        }).delay(300).queue(function(next) {
+          $('.third a').css('background', '#5B9DD7');
+          next();
+        }).delay(5000).queue(function(next) {
+          $('.progress').toggleClass( 'finished');
+        });
+      }, {
+        offset: '75%'
       });
-    }, {
-      offset: '75%'
-    });
+    } else {
+      $('#first-gif').waypoint(function() {
+        $('#first-gif').attr('src', 'img/icon01_FULL.gif')
+      }, {
+        offset: '75%'
+      });
+      $('#second-gif').waypoint(function() {
+        $('#second-gif').attr('src', 'img/icon02_FULL.gif')
+      }, {
+        offset: '75%'
+      });
+      $('#third-gif').waypoint(function() {
+        $('#third-gif').attr('src', 'img/icon03_FULL.gif')
+      }, {
+        offset: '75%'
+      });
+    }
 
     //show the chart bars in the Why Carzell section
     $('#dollar-bars').waypoint(function() {
@@ -58,7 +79,7 @@
     });
 
     
-
+    //recently sold slider
     $('.bxslider').bxSlider({
       minSlides: 1,
       maxSlides: 4,
@@ -68,6 +89,7 @@
       responsive: true
     });
     
+    //video overlay
     $('#video').click(function(e){
       e.preventDefault();
       $('#vimeo').attr('src', vurl);
@@ -110,8 +132,6 @@
       $('.circle').removeClass('opened');
     })
   });
-
-
 
 
 })(jQuery, window, document);
