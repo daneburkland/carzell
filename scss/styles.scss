@@ -148,7 +148,7 @@ header {
   -webkit-transform: translate3d(0,0,0);
   -webkit-backface-visibility: hidden;
   -webkit-perspective: 1000;
-  z-index: 999;
+  z-index: 999999;
   height: 50px;
   width: 100%;
   background: rgba(91, 157, 215, .8);
@@ -204,9 +204,6 @@ header {
 .menu span:after { position: absolute; content: ''; display: block; width: 25px; height: 4px; background: #fff; }
 .menu span:before { top: -8px; }
 .menu span:after { bottom: -8px; }
-
-/* .menu:hover, */
-.opened .menu { background: #ea4031; }
 
 .menu:hover span:before,
 .menu:hover span,
@@ -358,6 +355,7 @@ header {
       bottom: 17vh;
       display: inline-block;
       width: 5vh;
+      left: 50%;
       text-align: center;
       font-size: 3vh;
       height: 5vh;
@@ -886,6 +884,12 @@ footer {
     }
     .hero-text {
       padding-left: 25%;
+      h1 {
+        margin-bottom: 3vh;
+      }
+      p {
+        margin-left: 10%;
+      }
     }
   }
   .how-it-works {
@@ -954,10 +958,5 @@ footer {
       }
     }
   }
-}
-
-/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
-@media only screen and (max-width: 479px) {
-
 }
 

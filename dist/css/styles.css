@@ -139,7 +139,7 @@ header {
   -webkit-transform: translate3d(0, 0, 0);
   -webkit-backface-visibility: hidden;
   -webkit-perspective: 1000;
-  z-index: 999;
+  z-index: 999999;
   height: 50px;
   width: 100%;
   background: rgba(91, 157, 215, 0.8); }
@@ -227,10 +227,6 @@ header {
 
 .menu span:after {
   bottom: -8px; }
-
-/* .menu:hover, */
-.opened .menu {
-  background: #ea4031; }
 
 .menu:hover span:before, .menu:hover span, .menu:hover span:after {
   background: #fff; }
@@ -457,6 +453,7 @@ header {
       bottom: 17vh;
       display: inline-block;
       width: 5vh;
+      left: 50%;
       text-align: center;
       font-size: 3vh;
       height: 5vh;
@@ -942,6 +939,10 @@ footer {
     left: -5%; }
   .hero .hero-text {
     padding-left: 25%; }
+    .hero .hero-text h1 {
+      margin-bottom: 3vh; }
+    .hero .hero-text p {
+      margin-left: 10%; }
   .how-it-works .progress {
     display: none; }
   .how-it-works .container {
@@ -998,5 +999,3 @@ footer {
       width: 100%; }
       .testimonials .container .speech-bubble:first-child {
         margin-bottom: 30px; } }
-
-/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
