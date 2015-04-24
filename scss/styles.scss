@@ -119,11 +119,13 @@ h2 {
 }
 .btn { 
   display: inline-block;
-  width: 100px; 
+  width: 130px; 
   height: 32px; 
   border: 2px solid #fff;
   line-height: 26px; 
+  font-size: 13px;
   color: #fff; 
+  font-family: 'Montserrat', sans-serif;
   text-align: center;
   transition: background-color .3s;
 }
@@ -182,6 +184,7 @@ header {
   background: #5b9dd7; 
   font-family: 'Montserrat', sans-serif; 
   margin-left: 10px;
+  width: 100px;
   font-size: 13px; 
   text-transform: uppercase; 
 }
@@ -231,7 +234,7 @@ header {
 .main-nav.opened ul { left: 0; height: 100vh; opacity: 1; filter:alpha(opacity=100); }
 
 .main-nav ul { position: absolute; top: 100%; left: -100%; z-index: 99; overflow: hidden; width: 100%; list-style: none outside none; opacity: 0; filter:alpha(opacity=0);}
-.main-nav li { position: relative; overflow: hidden; height: 100%; float: left; width: 25%; }
+.main-nav li { position: relative; overflow: hidden; height: 100%; float: left; width: 25%; padding: 0 5%;}
 .main-nav li a { position: relative; z-index: 7; overflow: hidden; display: block; height: 465px; padding-top: 235px; text-align: center; opacity: 1; }
 .main-nav li a:hover { background-color: transparent; text-decoration: none; }
 .main-nav li strong,
@@ -239,7 +242,7 @@ header {
 .main-nav li img { position: absolute; top: 0; left: -100%; z-index: 1; width: 100%; height: auto; opacity: 0; filter:alpha(opacity=0); }
 .main-nav li img ~ img { display: none; }
 .main-nav li:hover img { left: 0; opacity: 1; filter:alpha(opacity=100);  }
-.main-nav strong { display: block; padding-bottom: 36px; font-family: 'Proxima Nova Bold'; font-size: 36px; line-height: 1.06; color: #fff; text-transform: uppercase; }
+.main-nav strong { display: block; padding-bottom: 36px; font-size: 36px; line-height: 1.06; color: #fff; text-transform: uppercase; }
 .home strong { padding: 25px 0 49px; }
 .about strong { color: #1b2f5d; }
 
@@ -261,10 +264,22 @@ header {
 .dealer a:hover .btn { color: #1b2f5d; }
 .about a:hover .btn { background: #1b2f5d; color: #fff; }
 .main-nav a:hover .btn { background: #ea4031; color: #fff; }
-.main-nav .home a:hover .btn {
+.main-nav a:hover .btn {
   background: #fff;
+}
+.main-nav .home a:hover .btn {
   color: #ea4031;
 }
+.main-nav .seller a:hover .btn {
+  color: #5b9dd7;
+}
+.main-nav .dealer a:hover .btn {
+  color: #1b2f5d;
+}
+.main-nav .about a:hover .btn {
+  background-color: #1b2f5d;
+}
+
 
 .main-nav ul {
   -webkit-transition: left .8s, opacity .8s;
@@ -493,14 +508,6 @@ header {
 /* ================================================================================
   #Why Carzell
 ================================================================================ */
-/* .chrome {
-  .get-more-bar {
-    clip-path: polygon(0 100%, 100% 53%, 100% 100%, 0% 100%);
-  }
-  .sell-quickly img:nth-child(2), .sell-quickly img:nth-child(3) {
-    clip-path: polygon(0 0, 8% 0, 8% 100%, 0 100%);
-  }
-} */
 
 
 .why-carzell {
@@ -539,6 +546,7 @@ header {
       &.loaded {
         clip-path: polygon(0 41%, 100% 0, 100% 100%, 0% 100%);
       }
+
     }
     .get-more-text {
       left: 50%;
@@ -555,8 +563,9 @@ header {
       left: 50%;
     }
     img {
+      transition: all 4s ease-out;
       &:nth-child(2) {
-        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); 
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
       }
       &:nth-child(3) {
         clip-path: polygon(0 0, 8% 0, 8% 100%, 0 100%);
@@ -564,7 +573,6 @@ header {
       &:nth-child(-n+3) {
         position: absolute;
         left: 50%;
-        transition: all 4s ease-out;
         &.loaded {
           clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
         }
@@ -791,6 +799,7 @@ footer {
   background: rgba(0,0,0,0.6);
   z-index: 1000;
 }
+
 .video-playing iframe {
   width: 800px;
   margin: 80px auto;
@@ -801,6 +810,10 @@ footer {
   #Media queries (responsive)
 ================================================================================ */
 
+
+@media only screen and (min-width: 1024px) {
+
+}
 
 
 
@@ -879,15 +892,20 @@ footer {
     font-size: 1rem;
   }
   header {
-    .container {
-      justify-content: flex-end;
-      .nav-user {
-        display: none;
+      .container {
+        justify-content: flex-end;
+        .nav-user {
+          display: none;
+        }
+        .logo {
+          margin-right: 5%;
+        }
+        &.opened {
+            .nav-user {
+              display: flex;
+            }
+        }
       }
-      .logo {
-        margin-right: 5%;
-      }
-    }
   }
   footer {
     .row {
@@ -979,6 +997,12 @@ footer {
         }
       }
     }
+  }
+  .video-playing iframe {
+    width: 100%;
+    height: 80%;
+    margin: 80px auto;
+    display: block;
   }
 }
 

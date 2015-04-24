@@ -4,7 +4,7 @@
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
   <title>Sell Car To Dealers For The Most Money. Carzell Auction</title>
-<!--   <link href='https://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'> -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
 <!--   <link rel="stylesheet" href="css/fonts.css" type="text/css" media="all" /> -->
   <link rel="stylesheet" href="css/jquery.bxslider.css" type="text/css" media="all" />
   <link rel="stylesheet" href="css/animate.min.css" type="text/css" media="all" />
@@ -304,6 +304,9 @@
     <img src="img/facebook_icon.png" height="152" width="151" alt="" />
     <img src="img/twitter_icon.png" height="152" width="151" alt="" />
   </div>
+</footer>
+
+
 
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
@@ -312,10 +315,27 @@
 <script type="text/javascript" src="js/main.js"></script>
 
 <div id="video_overlay" style="display:none;"></div>
-<script>
+<!-- /*<script>
   function loadVideo(){
     jQuery('#video').click(function(e){
       jQuery('#video_overlay').html('<iframe src="//player.vimeo.com/video/114151416?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff&amp;autoplay=1&amp;loop=0" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
+      e.preventDefault();
+      e.stopPropagation();
+    });
+    jQuery('html').click(function(e){
+      jQuery('#video_overlay').html('');
+      e.stopPropagation();
+    });
+  }
+  jQuery(document).ready(function(){
+    loadVideo();
+  });
+</script>*/ -->
+
+<script>
+  function loadVideo(){
+    jQuery('#video').click(function(e){
+      jQuery('#video_overlay').html('<iframe src="//player.vimeo.com/video/114151416?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff&amp;autoplay=1&amp;loop=0" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
       e.preventDefault();
       e.stopPropagation();
     });

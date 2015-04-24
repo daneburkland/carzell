@@ -64,7 +64,6 @@
     //show the chart bars in the Why Carzell section
     $('#dollar-bars').waypoint(function() {
       $('#dollar-bars').addClass('loaded');
-/*      $('get-more-bar').css( {"clip-path": "polygon(0 41%, 100% 0, 100% 100%, 0% 100%)" } );*/
     }, {
       offset: '50%'
     });
