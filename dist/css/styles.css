@@ -117,7 +117,9 @@ h2 {
   border: 2px solid #fff;
   line-height: 26px;
   color: #fff;
-  text-align: center; }
+  text-align: center;
+  -webkit-transition: background-color .3s;
+          transition: background-color .3s; }
 
 /* ================================================================================
   #Containers
@@ -571,6 +573,14 @@ header {
 /* ================================================================================
   #Why Carzell
 ================================================================================ */
+/* .chrome {
+  .get-more-bar {
+    clip-path: polygon(0 100%, 100% 53%, 100% 100%, 0% 100%);
+  }
+  .sell-quickly img:nth-child(2), .sell-quickly img:nth-child(3) {
+    clip-path: polygon(0 0, 8% 0, 8% 100%, 0 100%);
+  }
+} */
 .why-carzell {
   position: relative; }
   .why-carzell .benefit {
@@ -592,16 +602,16 @@ header {
     width: 50%;
     height: auto; }
   .why-carzell .get-more img:nth-child(n+2) {
+    position: absolute;
     -webkit-clip-path: polygon(0 100%, 100% 53%, 100% 100%, 0% 100%);
             clip-path: polygon(0 100%, 100% 53%, 100% 100%, 0% 100%);
-    position: absolute;
     top: 0;
     left: 0;
     -webkit-transition: all 2s ease-out;
             transition: all 2s ease-out; }
     .why-carzell .get-more img:nth-child(n+2).loaded {
-      -webkit-clip-path: polygon(0 45%, 100% 0, 100% 100%, 0% 100%);
-              clip-path: polygon(0 45%, 100% 0, 100% 100%, 0% 100%); }
+      -webkit-clip-path: polygon(0 41%, 100% 0, 100% 100%, 0% 100%);
+              clip-path: polygon(0 41%, 100% 0, 100% 100%, 0% 100%); }
   .why-carzell .get-more .get-more-text {
     left: 50%; }
   .why-carzell hr {
@@ -752,7 +762,7 @@ header {
   background: #5B9DD7;
   color: #fff;
   text-align: center;
-  padding: 3vh 0; }
+  padding: 4vh 0; }
   .dealer-section h2 {
     color: #fff; }
   .dealer-section .line {
@@ -852,7 +862,9 @@ footer {
 /* iPad Landscape */
 @media only screen and (max-width: 1024px) {
   .testimonials .container .speech-bubble {
-    width: 35%; } }
+    width: 35%; }
+  .how-it-works .container .step .step-text h3 {
+    font-size: 1.333rem; } }
 
 /* iPad Portrait */
 /* All Mobile Sizes (devices and browsers) */

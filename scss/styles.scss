@@ -125,6 +125,7 @@ h2 {
   line-height: 26px; 
   color: #fff; 
   text-align: center;
+  transition: background-color .3s;
 }
 
 /* ================================================================================
@@ -492,6 +493,16 @@ header {
 /* ================================================================================
   #Why Carzell
 ================================================================================ */
+/* .chrome {
+  .get-more-bar {
+    clip-path: polygon(0 100%, 100% 53%, 100% 100%, 0% 100%);
+  }
+  .sell-quickly img:nth-child(2), .sell-quickly img:nth-child(3) {
+    clip-path: polygon(0 0, 8% 0, 8% 100%, 0 100%);
+  }
+} */
+
+
 .why-carzell {
   position: relative;
   .benefit  {
@@ -520,13 +531,13 @@ header {
   }
   .get-more {
     img:nth-child(n+2) {
-      clip-path: polygon(0 100%, 100% 53%, 100% 100%, 0% 100%);
       position: absolute;
+      clip-path: polygon(0 100%, 100% 53%, 100% 100%, 0% 100%);
       top: 0;
       left: 0;
       transition: all 2s ease-out;
       &.loaded {
-        clip-path: polygon(0 45%, 100% 0, 100% 100%, 0% 100%);
+        clip-path: polygon(0 41%, 100% 0, 100% 100%, 0% 100%);
       }
     }
     .get-more-text {
@@ -695,7 +706,7 @@ header {
   background: #5B9DD7;
   color: #fff;
   text-align: center;
-  padding: 3vh 0;
+  padding: 4vh 0;
   h2 {
     color: #fff;
   }
@@ -810,6 +821,17 @@ footer {
       .speech-bubble {
         width: 35%;
       }  
+    }
+  }
+  .how-it-works {
+    .container {
+      .step {
+        .step-text {
+          h3 {
+            font-size: 1.333rem;
+          }
+        }
+      }
     }
   }
 }
