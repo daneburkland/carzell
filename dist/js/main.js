@@ -15,12 +15,10 @@
       });
     });
 
-    var gifAnimation = function() {
-      $('#first-gif').waypoint(function() {
-        $('#first-gif').attr('src', 'img/icon01_FULL.gif')
+    var progressBarAnimation = function() {
+      $('#first-gif').waypoint(function(direction) {
+        $('.first span').css('background', '#5B9DD7')
         .delay(5000).queue(function(next) {
-          $('#second-gif').attr('src', 'img/icon02_FULL.gif');
-          console.log('second');
           $('.progress').toggleClass( 'second-step');
           $('#progress-circle').toggleClass('second-step');
           next();
@@ -28,8 +26,6 @@
           $('.second span').css('background', '#5B9DD7');
           next();
         }).delay(7500).queue(function(next) {
-          $('#third-gif').attr('src', 'img/icon03_FULL.gif');
-          console.log('third');
           $('.progress').toggleClass( 'third-step');
           $('#progress-circle').toggleClass('third-step');
           next();
@@ -45,6 +41,48 @@
       });
     }
 
+    //GIFs trigger in succession on downward scroll to section
+    var gifAnimation = function() {
+        var second;
+        function startSecond() {
+          window.clearTimeout(second);
+          second = window.setTimeout(function() {
+            $('#second-gif').attr('src', 'img/icon02_FULL.gif');
+          }, 5000)
+        }
+        var third;
+        function startThird() {
+          window.clearTimeout(third);
+          third = window.setTimeout(function() {
+            $('#third-gif').attr('src', 'img/icon03_FULL.gif');
+          }, 12500)
+        }
+        $('#first-gif').waypoint(function(direction) {
+          if (direction === 'down') {
+            $('#first-gif').attr('src', 'img/icon01_FULL.gif');
+            startSecond();
+            startThird();
+            $('#second-gif').attr('src', 'img/Icon02_START.png');
+            $('#third-gif').attr('src', 'img/Icon03_START.png');
+          }
+        }, {
+        offset: '75%'
+        });
+        $('#first-gif').waypoint(function(direction) {
+          if (direction === 'up') {
+            $('#first-gif').attr('src', 'img/icon01_FULL.gif');
+            startSecond();
+            startThird();
+            $('#second-gif').attr('src', 'img/Icon02_START.png');
+            $('#third-gif').attr('src', 'img/Icon03_START.png');
+          }
+        }, {
+        offset: '5%'
+        });
+    }
+
+
+    //mobile 'how it works' each trigger on scroll
     var mobileGifAnimation = function() {
       $('#first-gif').waypoint(function() {
         $('#first-gif').attr('src', 'img/icon01_FULL.gif')
@@ -63,9 +101,9 @@
       });
     }
 
-    //if not mobile, start the first gif, then start others in progression
-    //if mobile, start each when scrolled to
+    //regular how it works animation vs. mobile
     if ($(window).width() > 767) {
+      progressBarAnimation();
       gifAnimation();
     } else {
       mobileGifAnimation();
