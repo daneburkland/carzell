@@ -25,7 +25,7 @@
           $('#progress-circle').toggleClass('second-step');
           next();
         }).delay(300).queue(function(next) {
-          $('.second a').css('background', '#5B9DD7');
+          $('.second span').css('background', '#5B9DD7');
           next();
         }).delay(7500).queue(function(next) {
           $('#third-gif').attr('src', 'img/icon03_FULL.gif');
@@ -34,7 +34,7 @@
           $('#progress-circle').toggleClass('third-step');
           next();
         }).delay(300).queue(function(next) {
-          $('.third a').css('background', '#5B9DD7');
+          $('.third span').css('background', '#5B9DD7');
           next();
         }).delay(5000).queue(function(next) {
           $('.progress').toggleClass( 'finished');

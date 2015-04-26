@@ -414,24 +414,36 @@ header {
   background-position: center;
   background-size: cover;
   text-align: left; }
-  .hero .hero-text, .hero .video {
+  .hero .hero-text, .hero .video-thumb {
     top: 40vh;
     -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
             transform: translateY(-50%); }
-  .hero .video {
+  .hero .video-thumb {
     position: absolute;
-    width: 20vh;
+    width: 30vh;
     height: 20vh;
-    background-image: url('../img/play.png');
+    right: 15%;
+    background: url("../img/video-thumb.png");
     background-size: cover;
-    left: 15%; }
-    .hero .video:hover {
-      background-image: url('../img/play-hover.png'); }
+    border: 3px solid #fff; }
+    .hero .video-thumb:hover {
+      background: -webkit-linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url("../img/video-thumb.png");
+      background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url("../img/video-thumb.png");
+      background-size: cover; }
+    .hero .video-thumb .play {
+      position: absolute;
+      top: 50%;
+      left: 54%;
+      height: 70%;
+      width: auto;
+      -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%); }
   .hero .hero-text {
-    position: relative;
-    text-align: right;
-    padding-left: 50%; }
+    position: absolute;
+    text-align: left;
+    padding-right: 50%; }
     .hero .hero-text .btn {
       width: 150px;
       height: 45px;
@@ -448,7 +460,7 @@ header {
       margin-bottom: 5vh;
       font-weight: 300; }
     .hero .hero-text p {
-      margin-left: 25%;
+      margin-right: 25%;
       font-size: 1.333rem; }
 
 /* ================================================================================
@@ -469,7 +481,7 @@ header {
     width: 30%;
     text-align: center;
     position: relative; }
-    .how-it-works .step a {
+    .how-it-works .step span {
       position: absolute;
       bottom: 17vh;
       display: inline-block;
@@ -490,7 +502,7 @@ header {
       margin-bottom: 10vh;
       position: relative;
       left: -14%; }
-  .how-it-works .second a, .how-it-works .third a {
+  .how-it-works .second span, .how-it-works .third span {
     background: #B3B3B3; }
   .how-it-works .step-text {
     height: 18vh; }
@@ -501,7 +513,7 @@ header {
     width: 100%;
     background: #ECF0F6;
     height: 28vh; }
-    .how-it-works .progress a {
+    .how-it-works .progress span {
       position: absolute;
       top: -1.5vh;
       left: 22%;
@@ -515,9 +527,9 @@ header {
               transform: translateX(-50%);
       -webkit-transition: left .3s ease-in-out;
               transition: left .3s ease-in-out; }
-      .how-it-works .progress a.second-step {
+      .how-it-works .progress span.second-step {
         left: 50%; }
-      .how-it-works .progress a.third-step {
+      .how-it-works .progress span.third-step {
         left: 78%; }
     .how-it-works .progress:before {
       content: "";
@@ -881,16 +893,16 @@ footer {
     display: -ms-flexbox;
     display: flex;
     list-style: none;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
     width: 70%; }
     footer ul li {
-      margin: 5px 20px;
+      margin: 8px 0 8px 20px;
       text-align: center; }
       footer ul li a {
         color: #fff; }
@@ -912,11 +924,12 @@ footer {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
-  z-index: 1000; }
+  z-index: 10000000; }
 
 .video-playing iframe {
   width: 800px;
-  margin: 80px auto;
+  height: 85%;
+  margin: 5% auto;
   display: block; }
 
 /* ================================================================================
@@ -929,12 +942,15 @@ footer {
 
 /* iPad Landscape */
 @media only screen and (max-width: 1024px) {
-  .testimonials .container .speech-bubble {
-    width: 35%; }
   .how-it-works .container .step .step-text h3 {
-    font-size: 1.333rem; } }
+    font-size: 1.333rem; }
+  .why-carzell .get-more {
+    margin: 20px 0 20px 0; }
+    .why-carzell .get-more .get-more-text {
+      width: 40%; }
+  .why-carzell .sell-quickly {
+    margin-top: 20px; } }
 
-/* iPad Portrait */
 /* All Mobile Sizes (devices and browsers) */
 @media only screen and (max-width: 767px) {
   .main-nav ul li a {
@@ -987,7 +1003,7 @@ footer {
   .main-nav > ul > li strong span {
     display: inline-block; }
   .container {
-    width: 90%; }
+    width: 95%; }
   h1 {
     font-size: 2.666rem; }
   h2 {
@@ -1004,7 +1020,7 @@ footer {
     header .container .nav-user {
       display: none; }
     header .container .logo {
-      margin-right: 5%; }
+      margin-right: 7.5%; }
     header .container.opened .nav-user {
       display: -webkit-box;
       display: -webkit-flex;
@@ -1018,16 +1034,43 @@ footer {
             flex-direction: column; }
     footer .row .logo {
       margin-bottom: 50px; }
+    footer .row .footer-links {
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
   h2 {
     text-align: center; }
-  .hero .video {
-    left: -5%; }
-  .hero .hero-text {
-    padding-left: 25%; }
-    .hero .hero-text h1 {
-      margin-bottom: 3vh; }
-    .hero .hero-text p {
-      margin-left: 10%; }
+  .hero {
+    height: 100vh; }
+    .hero .container, .hero .hero-text {
+      height: 100%; }
+    .hero .video-thumb {
+      left: 50%;
+      top: 54%;
+      -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%);
+      width: 35vh;
+      height: 23vh; }
+    .hero .hero-text {
+      padding-right: 0%;
+      text-align: center;
+      width: 100%;
+      /* margin-top: 2vh; */ }
+      .hero .hero-text h1 {
+        top: 15vh; }
+      .hero .hero-text h1, .hero .hero-text p, .hero .hero-text a {
+        position: absolute; }
+      .hero .hero-text p {
+        margin-right: 0;
+        bottom: 6vh; }
+      .hero .hero-text a {
+        bottom: 0;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+                transform: translateX(-50%); }
   .how-it-works .progress {
     display: none; }
   .how-it-works .container {
@@ -1040,7 +1083,7 @@ footer {
       .how-it-works .container .step img {
         left: 0;
         margin-bottom: 3vh; }
-      .how-it-works .container .step a {
+      .how-it-works .container .step span {
         display: none; }
   .recently-sold .bx-prev {
     left: 0; }
@@ -1056,7 +1099,8 @@ footer {
         -ms-transform: none;
             transform: none;
     padding: 0 5%; }
-  .why-carzell .get-more-text {
+  .why-carzell .get-more .get-more-text {
+    width: 100%;
     margin-bottom: 25px; }
   .why-carzell .sell-quickly {
     display: -webkit-box;

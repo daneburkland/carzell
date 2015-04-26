@@ -320,25 +320,40 @@ header {
   background-position: center;
   background-size: cover;
   text-align: left;
-  .hero-text , .video {
+  .hero-text, .video-thumb {
     top: 40vh;
     transform: translateY(-50%);
   }
-  .video {
+  .video-thumb {
     position: absolute;
-    width: 20vh;
+    width: 30vh;
     height: 20vh;
-    background-image: url('../img/play.png');
+    right: 15%;
+    background: url("../img/video-thumb.png");
     background-size: cover;
-    left: 15%;
+    border: 3px solid #fff;
     &:hover {
-      background-image: url('../img/play-hover.png');
+      background: 
+        linear-gradient(
+          rgba(255, 255, 255, 0.4), 
+          rgba(255, 255, 255, 0.4)
+        ),
+      url("../img/video-thumb.png");
+      background-size: cover;
+    }
+    .play {
+      position: absolute;
+      top: 50%;
+      left: 54%;
+      height: 70%;
+      width: auto;
+      transform: translate(-50%, -50%);
     }
   }
   .hero-text {
-    position: relative;
-    text-align: right;
-    padding-left: 50%;
+    position: absolute;
+    text-align: left;
+    padding-right: 50%;
     .btn {
       width: 150px;
       height: 45px;
@@ -359,7 +374,7 @@ header {
     font-weight: 300;
   }
   p {
-    margin-left: 25%;
+    margin-right: 25%;
     font-size: 1.333rem;
   }
   }
@@ -378,7 +393,7 @@ header {
     width: 30%;
     text-align: center;
     position: relative;
-    a {
+    span {
       position: absolute;
       bottom: 17vh;
       display: inline-block;
@@ -400,7 +415,7 @@ header {
       left: -14%;
     }
   }
-  .second a, .third a {
+  .second span, .third span {
     background: #B3B3B3;
   }
   .step-text {
@@ -413,7 +428,7 @@ header {
     width: 100%;
     background: #ECF0F6;
     height: 28vh;
-    a {
+    span {
       position: absolute;
       top: -1.5vh;
       left: 22%;
@@ -803,11 +818,11 @@ footer {
   ul {
     display: flex;
     list-style: none;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
     width: 70%;
     li {
-      margin: 5px 20px;
+      margin: 8px 0 8px 20px;
       text-align: center;
       a {
         color: #fff;
@@ -837,12 +852,13 @@ footer {
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.6);
-  z-index: 1000;
+  z-index: 10000000;
 }
 
 .video-playing iframe {
   width: 800px;
-  margin: 80px auto;
+  height: 85%;
+  margin: 5% auto;
   display: block;
 }
 
@@ -869,13 +885,7 @@ footer {
 
 /* iPad Landscape */
 @media only screen and (max-width: 1024px) {
-  .testimonials {
-    .container {
-      .speech-bubble {
-        width: 35%;
-      }  
-    }
-  }
+
   .how-it-works {
     .container {
       .step {
@@ -887,14 +897,17 @@ footer {
       }
     }
   }
-}
- 
-
-/* iPad Portrait */
-@media only screen and (min-width: 768px) and (max-width: 985px){
-
-
-
+  .why-carzell {
+    .get-more {
+      margin: 20px 0 20px 0;
+      .get-more-text {
+        width: 40%;
+      }
+    }
+    .sell-quickly {
+      margin-top: 20px;
+    }
+  }
 }
 
 /* All Mobile Sizes (devices and browsers) */
@@ -917,7 +930,7 @@ footer {
 
 
   .container {
-    width: 90%;
+    width: 95%;
   }
   h1 {
     font-size: 2.666rem;
@@ -938,7 +951,7 @@ footer {
           display: none;
         }
         .logo {
-          margin-right: 5%;
+          margin-right: 7.5%;
         }
         &.opened {
             .nav-user {
@@ -953,22 +966,41 @@ footer {
       .logo {
         margin-bottom: 50px;
       }
+      .footer-links {
+        justify-content: center;
+      }
     }
   }
   h2 {
     text-align: center;
   }
   .hero {
-    .video {
-      left: -5%;
+    height: 100vh;
+    .container, .hero-text { height: 100%;}
+    .video-thumb {
+      left: 50%;
+      top: 54%;
+      transform: translate(-50%, -50%);
+      width: 35vh;
+      height: 23vh;
     }
     .hero-text {
-      padding-left: 25%;
+      padding-right: 0%;
+      text-align: center;
+      width: 100%;
+      /* margin-top: 2vh; */
       h1 {
-        margin-bottom: 3vh;
+        top: 15vh;
       }
+      h1, p, a { position: absolute;}
       p {
-        margin-left: 10%;
+        margin-right: 0;
+        bottom: 6vh;
+      }
+      a {
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
       }
     }
   }
@@ -985,7 +1017,7 @@ footer {
           left: 0;
           margin-bottom: 3vh;
         }
-        a {
+        span {
           display: none;
         }
       }
@@ -1010,7 +1042,8 @@ footer {
       transform: none;
       padding: 0 5%;
     }
-    .get-more-text {
+    .get-more .get-more-text {
+      width: 100%;
       margin-bottom: 25px;
     }
     .sell-quickly {
