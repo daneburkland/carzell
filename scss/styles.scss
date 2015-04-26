@@ -309,8 +309,16 @@ header {
 .hero {
   position: relative;
   height: 85vh;
-  background-image: url("../img/hero_bg_placeholder.png");
+  /* background-image: url("../img/hero_bg_placeholder.png"); */
+  background: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.6), 
+      rgba(0, 0, 0, 0.6)
+    ),
+  url("../img/hero_bg_placeholder-2.jpg");
+
   background-position: center;
+  background-size: cover;
   text-align: left;
   .hero-text , .video {
     top: 40vh;
@@ -335,13 +343,17 @@ header {
       width: 150px;
       height: 45px;
       line-height: 40px;
+      font-size: 16px;
       background: #EA4031;
       border-color: #fff;
       &:hover {
-        background: #5B9DD7;
+        background: #fff;
+        color: #ea4031;
       }
     }
-  h1, p { color: #fff; }
+  h1, p { 
+    color: #fff; 
+  }
   h1 {
     margin-bottom: 5vh;
     font-weight: 300;
@@ -510,6 +522,32 @@ header {
 ================================================================================ */
 
 
+/* Safari handles clip-path animations better than clip-path transitions. These animations are used in the charts */
+@keyframes get-more-clip {
+  0% {
+    clip-path: polygon(0 100%, 100% 53%, 100% 100%, 0% 100%);
+  }
+   100% {
+    clip-path: polygon(0 41%, 100% 0, 100% 100%, 0% 100%);
+  }
+}
+@keyframes private-sale-clip {
+  0% {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  }
+   100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+}
+@keyframes carzell-sale-clip {
+  0% {
+    clip-path: polygon(0 0, 8% 0, 8% 100%, 0 100%);
+  }
+   100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+}
+
 .why-carzell {
   position: relative;
   .benefit  {
@@ -542,11 +580,10 @@ header {
       clip-path: polygon(0 100%, 100% 53%, 100% 100%, 0% 100%);
       top: 0;
       left: 0;
-      transition: all 2s ease-out;
+      /* transition: all 2s ease-out; */
       &.loaded {
-        clip-path: polygon(0 41%, 100% 0, 100% 100%, 0% 100%);
+        animation: get-more-clip 2s ease-out forwards;
       }
-
     }
     .get-more-text {
       left: 50%;
@@ -566,16 +603,19 @@ header {
       transition: all 4s ease-out;
       &:nth-child(2) {
         clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+        &.loaded {
+          animation: private-sale-clip 4s ease-out forwards;
+        }
       }
       &:nth-child(3) {
         clip-path: polygon(0 0, 8% 0, 8% 100%, 0 100%);
+        &.loaded {
+          animation: carzell-sale-clip 4s ease-out forwards;
+        }
       }
       &:nth-child(-n+3) {
         position: absolute;
         left: 50%;
-        &.loaded {
-          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-        }
       }
     }
     .sell-quickly-text {
@@ -646,7 +686,7 @@ header {
         display: flex;
         align-items: center;
         img {
-          clip-path: circle(45% at 50% 50%);
+          clip-path: circle(39% at 50% 50%);
           width: 100px;
           height: auto;
         }

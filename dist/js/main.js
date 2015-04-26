@@ -13,16 +13,14 @@
       }, {
         offset: '75%'
       });
+    });
 
-    })
-
-    //if not mobile, start the first gif, then start others in progression
-    //if mobile, start each when scrolled to
-    if ($(window).width() > 767) {
+    var gifAnimation = function() {
       $('#first-gif').waypoint(function() {
         $('#first-gif').attr('src', 'img/icon01_FULL.gif')
         .delay(5000).queue(function(next) {
           $('#second-gif').attr('src', 'img/icon02_FULL.gif');
+          console.log('second');
           $('.progress').toggleClass( 'second-step');
           $('#progress-circle').toggleClass('second-step');
           next();
@@ -31,6 +29,7 @@
           next();
         }).delay(7500).queue(function(next) {
           $('#third-gif').attr('src', 'img/icon03_FULL.gif');
+          console.log('third');
           $('.progress').toggleClass( 'third-step');
           $('#progress-circle').toggleClass('third-step');
           next();
@@ -40,6 +39,66 @@
         }).delay(5000).queue(function(next) {
           $('.progress').toggleClass( 'finished');
         });
+        this.destroy();
+      }, {
+        offset: '75%'
+      });
+    }
+
+    var mobileGifAnimation = function() {
+      $('#first-gif').waypoint(function() {
+        $('#first-gif').attr('src', 'img/icon01_FULL.gif')
+      }, {
+        offset: '75%'
+      });
+      $('#second-gif').waypoint(function() {
+        $('#second-gif').attr('src', 'img/icon02_FULL.gif')
+      }, {
+        offset: '75%'
+      });
+      $('#third-gif').waypoint(function() {
+        $('#third-gif').attr('src', 'img/icon03_FULL.gif')
+      }, {
+        offset: '75%',
+      });
+    }
+
+    //if not mobile, start the first gif, then start others in progression
+    //if mobile, start each when scrolled to
+    if ($(window).width() > 767) {
+      gifAnimation();
+    } else {
+      mobileGifAnimation();
+    }
+
+
+    //if not mobile, start the first gif, then start others in progression
+    //if mobile, start each when scrolled to
+/*    if ($(window).width() > 767) {
+      $('#first-gif').waypoint(function() {
+        $('#first-gif').attr('src', 'img/icon01_FULL.gif')
+        .delay(5000).queue(function(next) {
+          $('#second-gif').attr('src', 'img/icon02_FULL.gif');
+          console.log('second');
+          $('.progress').toggleClass( 'second-step');
+          $('#progress-circle').toggleClass('second-step');
+          next();
+        }).delay(300).queue(function(next) {
+          $('.second a').css('background', '#5B9DD7');
+          next();
+        }).delay(7500).queue(function(next) {
+          $('#third-gif').attr('src', 'img/icon03_FULL.gif');
+          console.log('third');
+          $('.progress').toggleClass( 'third-step');
+          $('#progress-circle').toggleClass('third-step');
+          next();
+        }).delay(300).queue(function(next) {
+          $('.third a').css('background', '#5B9DD7');
+          next();
+        }).delay(5000).queue(function(next) {
+          $('.progress').toggleClass( 'finished');
+        });
+        this.destroy();
       }, {
         offset: '75%'
       });
@@ -57,9 +116,19 @@
       $('#third-gif').waypoint(function() {
         $('#third-gif').attr('src', 'img/icon03_FULL.gif')
       }, {
-        offset: '75%'
+        offset: '75%',
       });
-    }
+    }*/
+
+    //if not mobile, start the first gif, then start others in progression
+    //if mobile, start each when scrolled to
+/*    if ($(window).width() > 767) {
+      $('.why-carzell').waypoint(function() {
+        $('#second-gif').attr('src', 'img/Icon02_START.png');
+        $('#third-gif').attr('src', 'img/Icon03_START.png');
+      });
+    } */
+
 
     //show the chart bars in the Why Carzell section
     $('#dollar-bars').waypoint(function() {

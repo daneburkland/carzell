@@ -408,8 +408,11 @@ header {
 .hero {
   position: relative;
   height: 85vh;
-  background-image: url("../img/hero_bg_placeholder.png");
+  /* background-image: url("../img/hero_bg_placeholder.png"); */
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/hero_bg_placeholder-2.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/hero_bg_placeholder-2.jpg");
   background-position: center;
+  background-size: cover;
   text-align: left; }
   .hero .hero-text, .hero .video {
     top: 40vh;
@@ -433,10 +436,12 @@ header {
       width: 150px;
       height: 45px;
       line-height: 40px;
+      font-size: 16px;
       background: #EA4031;
       border-color: #fff; }
       .hero .hero-text .btn:hover {
-        background: #5B9DD7; }
+        background: #fff;
+        color: #ea4031; }
     .hero .hero-text h1, .hero .hero-text p {
       color: #fff; }
     .hero .hero-text h1 {
@@ -587,6 +592,60 @@ header {
 /* ================================================================================
   #Why Carzell
 ================================================================================ */
+/* Safari handles clip-path animations better than clip-path transitions. These animations are used in the charts */
+@-webkit-keyframes get-more-clip {
+  0% {
+    -webkit-clip-path: polygon(0 100%, 100% 53%, 100% 100%, 0% 100%);
+            clip-path: polygon(0 100%, 100% 53%, 100% 100%, 0% 100%); }
+
+  100% {
+    -webkit-clip-path: polygon(0 41%, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 41%, 100% 0, 100% 100%, 0% 100%); } }
+@keyframes get-more-clip {
+  0% {
+    -webkit-clip-path: polygon(0 100%, 100% 53%, 100% 100%, 0% 100%);
+            clip-path: polygon(0 100%, 100% 53%, 100% 100%, 0% 100%); }
+
+  100% {
+    -webkit-clip-path: polygon(0 41%, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 41%, 100% 0, 100% 100%, 0% 100%); } }
+
+@-webkit-keyframes private-sale-clip {
+  0% {
+    -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+            clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); }
+
+  100% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); } }
+
+@keyframes private-sale-clip {
+  0% {
+    -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+            clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); }
+
+  100% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); } }
+
+@-webkit-keyframes carzell-sale-clip {
+  0% {
+    -webkit-clip-path: polygon(0 0, 8% 0, 8% 100%, 0 100%);
+            clip-path: polygon(0 0, 8% 0, 8% 100%, 0 100%); }
+
+  100% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); } }
+
+@keyframes carzell-sale-clip {
+  0% {
+    -webkit-clip-path: polygon(0 0, 8% 0, 8% 100%, 0 100%);
+            clip-path: polygon(0 0, 8% 0, 8% 100%, 0 100%); }
+
+  100% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); } }
+
 .why-carzell {
   position: relative; }
   .why-carzell .benefit {
@@ -613,11 +672,10 @@ header {
             clip-path: polygon(0 100%, 100% 53%, 100% 100%, 0% 100%);
     top: 0;
     left: 0;
-    -webkit-transition: all 2s ease-out;
-            transition: all 2s ease-out; }
+    /* transition: all 2s ease-out; */ }
     .why-carzell .get-more img:nth-child(n+2).loaded {
-      -webkit-clip-path: polygon(0 41%, 100% 0, 100% 100%, 0% 100%);
-              clip-path: polygon(0 41%, 100% 0, 100% 100%, 0% 100%); }
+      -webkit-animation: get-more-clip 2s ease-out forwards;
+              animation: get-more-clip 2s ease-out forwards; }
   .why-carzell .get-more .get-more-text {
     left: 50%; }
   .why-carzell hr {
@@ -633,15 +691,18 @@ header {
     .why-carzell .sell-quickly img:nth-child(2) {
       -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
               clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); }
+      .why-carzell .sell-quickly img:nth-child(2).loaded {
+        -webkit-animation: private-sale-clip 4s ease-out forwards;
+                animation: private-sale-clip 4s ease-out forwards; }
     .why-carzell .sell-quickly img:nth-child(3) {
       -webkit-clip-path: polygon(0 0, 8% 0, 8% 100%, 0 100%);
               clip-path: polygon(0 0, 8% 0, 8% 100%, 0 100%); }
+      .why-carzell .sell-quickly img:nth-child(3).loaded {
+        -webkit-animation: carzell-sale-clip 4s ease-out forwards;
+                animation: carzell-sale-clip 4s ease-out forwards; }
     .why-carzell .sell-quickly img:nth-child(-n+3) {
       position: absolute;
       left: 50%; }
-      .why-carzell .sell-quickly img:nth-child(-n+3).loaded {
-        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-                clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); }
   .why-carzell .sell-quickly .sell-quickly-text {
     left: 15%; }
   .why-carzell .get-more-text, .why-carzell .sell-quickly-text {
@@ -713,8 +774,8 @@ header {
             -ms-flex-align: center;
                 align-items: center; }
         .testimonials .container .speech-bubble .author img {
-          -webkit-clip-path: circle(45% at 50% 50%);
-                  clip-path: circle(45% at 50% 50%);
+          -webkit-clip-path: circle(39% at 50% 50%);
+                  clip-path: circle(39% at 50% 50%);
           width: 100px;
           height: auto; }
         .testimonials .container .speech-bubble .author .author-info {
