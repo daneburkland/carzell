@@ -942,6 +942,10 @@ footer {
 
 /* iPad Landscape */
 @media only screen and (max-width: 1024px) {
+  .hero .container .video-thumb {
+    right: 0;
+    width: 27vh;
+    height: 18vh; }
   .how-it-works .container .step .step-text h3 {
     font-size: 1.333rem; }
   .why-carzell .get-more {
