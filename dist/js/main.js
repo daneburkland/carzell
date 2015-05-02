@@ -5,6 +5,23 @@
   $doc.ready(function() {
     var vurl = $('#vimeo').attr('src');
 
+    //add background color to header when scrolled past hero image
+    $('.how-it-works').waypoint(function(direction) {
+      if (direction === 'down') {
+        $('header').addClass('scrolled-past');
+      }
+    }, {
+      offset: '10%'
+    });
+    $('.how-it-works').waypoint(function(direction) {
+      if (direction === 'up') {
+        $('header').removeClass('scrolled-past');
+      }
+    }, {
+      offset: '10%'
+    });
+
+
     //animate the lines under each section title when scrolled to
     $('.line').each(function() {
         var outerThis = $(this);
@@ -132,7 +149,7 @@
       minSlides: 1,
       maxSlides: 4,
       slideWidth: 250,
-      slideMargin: 25,
+      slideMargin: 45,
       autoControls: true,
       responsive: true
     });

@@ -146,7 +146,8 @@ header {
   z-index: 999999;
   height: 50px;
   width: 100%;
-  background: rgba(91, 157, 215, 0.8); }
+  -webkit-transition: background .4s ease-in-out;
+          transition: background .4s ease-in-out; }
   header .container {
     position: absolute;
     left: 10%;
@@ -163,6 +164,8 @@ header {
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between; }
+  header.scrolled-past {
+    background: rgba(91, 157, 215, 0.8); }
 
 .logo {
   font-family: 'Montserrat', sans-serif;
@@ -194,7 +197,7 @@ header {
   margin-left: 5px; }
 
 .nav-user a {
-  background: #5b9dd7;
+  background: transparent;
   font-family: 'Montserrat', sans-serif;
   margin-left: 10px;
   width: 100px;
@@ -278,6 +281,7 @@ header {
   left: -100%;
   z-index: 99;
   overflow: hidden;
+  height: 100vh;
   width: 100%;
   list-style: none outside none;
   opacity: 0;
@@ -409,10 +413,9 @@ header {
   position: relative;
   height: 85vh;
   /* background-image: url("../img/hero_bg_placeholder.png"); */
-  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/hero_bg_placeholder-2.jpg");
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/hero_bg_placeholder-2.jpg");
-  background-position: center;
-  background-size: cover;
+  background-image: url("../img/hero_bg_placeholder-2.jpg");
+  background-position: bottom;
+  background-size: 115%;
   text-align: left; }
   .hero .hero-text, .hero .video-thumb {
     top: 40vh;
@@ -421,16 +424,18 @@ header {
             transform: translateY(-50%); }
   .hero .video-thumb {
     position: absolute;
-    width: 30vh;
-    height: 20vh;
-    right: 15%;
-    background: url("../img/video-thumb.png");
+    width: 35vh;
+    height: 23vh;
+    left: 10%;
+    background: url("../img/carzell-video-placeholder.png");
     background-size: cover;
+    background-position: center;
     border: 3px solid #fff; }
     .hero .video-thumb:hover {
-      background: -webkit-linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url("../img/video-thumb.png");
-      background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url("../img/video-thumb.png");
-      background-size: cover; }
+      background: -webkit-linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url("../img/carzell-video-placeholder.png");
+      background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url("../img/carzell-video-placeholder.png");
+      background-size: cover;
+      background-position: center; }
     .hero .video-thumb .play {
       position: absolute;
       top: 50%;
@@ -442,8 +447,8 @@ header {
               transform: translate(-50%, -50%); }
   .hero .hero-text {
     position: absolute;
-    text-align: left;
-    padding-right: 50%; }
+    text-align: right;
+    padding-left: 45%; }
     .hero .hero-text .btn {
       width: 150px;
       height: 45px;
@@ -457,10 +462,11 @@ header {
     .hero .hero-text h1, .hero .hero-text p {
       color: #fff; }
     .hero .hero-text h1 {
+      font-size: 5rem;
       margin-bottom: 5vh;
       font-weight: 300; }
     .hero .hero-text p {
-      margin-right: 25%;
+      margin-left: 25%;
       font-size: 1.333rem; }
 
 /* ================================================================================
@@ -659,6 +665,7 @@ header {
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); } }
 
 .why-carzell {
+  background-color: #f6f6f6;
   position: relative; }
   .why-carzell .benefit {
     height: 50%;
@@ -866,13 +873,15 @@ header {
     left: -8%; }
   .bx-wrapper .bx-loading {
     background: url(../img/bx_loader.gif) center center no-repeat #ffffff; }
+  .bx-wrapper .bx-pager {
+    display: none; }
 
 /* ================================================================================
   #Footer
 ================================================================================ */
 footer {
-  background-color: #2A2C30;
-  padding: 12vh 0;
+  background-color: #222;
+  padding: 4vh 0;
   color: #fff; }
   footer .row {
     display: -webkit-box;
@@ -893,27 +902,46 @@ footer {
     display: -ms-flexbox;
     display: flex;
     list-style: none;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
-    width: 70%; }
+    width: 90%; }
     footer ul li {
-      margin: 8px 0 8px 20px;
-      text-align: center; }
+      margin: 8px 0;
+      text-align: center;
+      padding: 0 8px;
+      border-left: 2px solid #4d4d4d; }
+      footer ul li:first-child {
+        border-left: none; }
+      footer ul li:last-child {
+        padding-right: 0; }
       footer ul li a {
-        color: #fff; }
+        color: #5B9DD7; }
         footer ul li a:hover {
-          color: #5B9DD7; }
+          color: #fff; }
   footer .social {
+    position: relative;
     text-align: right;
     margin-top: 20px; }
-    footer .social img {
+    footer .social ul {
+      width: 100%; }
+      footer .social ul li {
+        padding: 0 20px; }
+        footer .social ul li:last-child {
+          padding-right: 0; }
+    footer .social a img {
       width: 35px;
       height: auto; }
+    footer .social p {
+      position: absolute;
+      left: 0;
+      bottom: -2vh;
+      font-size: .75em;
+      margin: 0; }
 
 /* ================================================================================
   #Video overlay
@@ -1043,6 +1071,13 @@ footer {
       -webkit-justify-content: center;
           -ms-flex-pack: center;
               justify-content: center; }
+      footer .row .footer-links li {
+        border-left: 0; }
+  footer .social ul {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
   h2 {
     text-align: center; }
   .hero {
