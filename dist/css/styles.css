@@ -1081,7 +1081,9 @@ footer {
   h2 {
     text-align: center; }
   .hero {
-    height: 100vh; }
+    height: 100vh;
+    background-size: auto 130%;
+    background-position: 60% 100%; }
     .hero .container, .hero .hero-text {
       height: 100%; }
     .hero .video-thumb {
@@ -1093,16 +1095,17 @@ footer {
       width: 35vh;
       height: 23vh; }
     .hero .hero-text {
-      padding-right: 0%;
+      padding-left: 0%;
       text-align: center;
       width: 100%;
       /* margin-top: 2vh; */ }
       .hero .hero-text h1 {
-        top: 15vh; }
+        top: 15vh;
+        font-size: 4rem; }
       .hero .hero-text h1, .hero .hero-text p, .hero .hero-text a {
         position: absolute; }
       .hero .hero-text p {
-        margin-right: 0;
+        margin-left: 0;
         bottom: 6vh; }
       .hero .hero-text a {
         bottom: 0;
