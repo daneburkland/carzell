@@ -918,11 +918,17 @@ footer {
 
 /* iPad Landscape */
 @media only screen and (max-width: 1024px) {
+  .main-nav {
+    li {
+      padding: 0 2%;
+    }
+  }
 
   .hero  {
+    background-size: auto 150%;
     .container {
       .video-thumb {
-        right: 0;
+        left: 0;
         width: 27vh;
         height: 18vh;
       }
