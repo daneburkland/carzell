@@ -1090,7 +1090,7 @@ footer {
     background-position: 60% 100%; }
     .hero .container, .hero .hero-text {
       height: 100%; }
-    .hero .video-thumb {
+    .hero .container .video-thumb {
       left: 50%;
       top: 54%;
       -webkit-transform: translate(-50%, -50%);
@@ -1105,7 +1105,7 @@ footer {
       /* margin-top: 2vh; */ }
       .hero .hero-text h1 {
         top: 15vh;
-        font-size: 4rem; }
+        font-size: 3rem; }
       .hero .hero-text h1, .hero .hero-text p, .hero .hero-text a {
         position: absolute; }
       .hero .hero-text p {
