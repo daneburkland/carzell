@@ -135,7 +135,7 @@ section {
   padding: 5vh 0; }
 
 /* ================================================================================
-  #Preload
+  #Preload GIFs
 ================================================================================ */
 body:after {
   display: none;
@@ -419,7 +419,6 @@ header {
 .hero {
   position: relative;
   height: 85vh;
-  /* background-image: url("../img/hero_bg_placeholder.png"); */
   background-image: url("../img/hero_bg_placeholder-2.jpg");
   background-position: bottom;
   background-size: 115%;
@@ -697,8 +696,7 @@ header {
     -webkit-clip-path: polygon(0 100%, 100% 53%, 100% 100%, 0% 100%);
             clip-path: polygon(0 100%, 100% 53%, 100% 100%, 0% 100%);
     top: 0;
-    left: 0;
-    /* transition: all 2s ease-out; */ }
+    left: 0; }
     .why-carzell .get-more img:nth-child(n+2).loaded {
       -webkit-animation: get-more-clip 2s ease-out forwards;
               animation: get-more-clip 2s ease-out forwards; }
@@ -1108,8 +1106,7 @@ footer {
     .hero .hero-text {
       padding-left: 0%;
       text-align: center;
-      width: 100%;
-      /* margin-top: 2vh; */ }
+      width: 100%; }
       .hero .hero-text h1 {
         top: 15vh;
         font-size: 3rem; }

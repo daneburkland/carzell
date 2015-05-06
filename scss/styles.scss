@@ -143,7 +143,7 @@ section {
 }
 
 /* ================================================================================
-  #Preload
+  #Preload GIFs
 ================================================================================ */
 body:after{
     display:none;
@@ -321,7 +321,6 @@ header {
 .hero {
   position: relative;
   height: 85vh;
-  /* background-image: url("../img/hero_bg_placeholder.png"); */
   background-image: url("../img/hero_bg_placeholder-2.jpg");
 
   background-position: bottom;
@@ -606,7 +605,6 @@ header {
       clip-path: polygon(0 100%, 100% 53%, 100% 100%, 0% 100%);
       top: 0;
       left: 0;
-      /* transition: all 2s ease-out; */
       &.loaded {
         animation: get-more-clip 2s ease-out forwards;
       }
@@ -1058,7 +1056,6 @@ footer {
       padding-left: 0%;
       text-align: center;
       width: 100%;
-      /* margin-top: 2vh; */
       h1 {
         top: 15vh;
         font-size: 3rem;
